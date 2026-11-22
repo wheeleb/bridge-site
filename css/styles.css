@@ -271,6 +271,18 @@ a:hover {
   background: #0b0d0f;
 }
 
+.music-credit {
+  margin: 0;
+  padding: 0 0.9rem 0.85rem;
+  color: var(--faint);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.music-credit a {
+  color: var(--muted);
+}
+
 .video-pair {
   display: grid;
   grid-template-columns: 1fr;
