@@ -235,6 +235,11 @@ a:hover {
   background: #0b0d0f;
 }
 
+.video-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .timeline {
   list-style: none;
   margin: 0;
@@ -467,6 +472,21 @@ a:hover {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1.35rem;
+  }
+
+  .video-pair {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.35rem;
+    align-items: start;
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 4.25rem 2rem;
+  }
+
+  .video-pair > .section {
+    max-width: none;
+    margin: 0;
+    padding: 0;
   }
 }
 
