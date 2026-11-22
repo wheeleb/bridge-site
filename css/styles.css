@@ -1,0 +1,395 @@
+/* The Bridge — static photographic page */
+
+:root {
+  --bg: #121417;
+  --bg-raised: #1b1e22;
+  --ink: #f3efe6;
+  --muted: #c4bdb0;
+  --faint: #8a847a;
+  --line: #3a3d42;
+  --accent: #d8c09a;
+  --focus: #f0d48a;
+  --shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.35);
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --measure: 38rem;
+  --page: 72rem;
+  --space: 1.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #2a2d32;
+}
+
+h1,
+h2,
+.lede,
+.gallery-caption,
+#lightbox-caption,
+.eyebrow {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+h1,
+h2 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.25rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space);
+  top: -4rem;
+  z-index: 20;
+  padding: 0.5rem 0.8rem;
+  background: var(--bg-raised);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--space);
+}
+
+/* Hero: the photograph is full-bleed; the title sits in a solid bar beneath it. */
+
+.hero {
+  background: #0b0d0f;
+}
+
+.hero-figure {
+  margin: 0;
+}
+
+.hero-figure img {
+  width: 100%;
+  height: min(88vh, 56rem);
+  object-fit: cover;
+  object-position: center 45%;
+  background: #1a2228;
+}
+
+.hero-title {
+  padding: 1.75rem var(--space) 2rem;
+  max-width: var(--page);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.lede {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+/* Nav */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(18, 20, 23, 0.94);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.site-nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0.7rem var(--space);
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--ink);
+}
+
+/* Sections */
+
+.section {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 3.5rem var(--space);
+}
+
+.section-head {
+  max-width: 40rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-head p,
+.intro p {
+  color: var(--muted);
+}
+
+.measure {
+  max-width: var(--measure);
+}
+
+/* Gallery */
+
+.gallery-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.gallery-item {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--bg-raised);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.river-side img {
+  aspect-ratio: 3 / 4;
+  object-position: center top;
+}
+
+.gallery-caption {
+  display: block;
+  padding: 0.7rem 0.9rem 0.9rem;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  filter: brightness(1.06);
+}
+
+.river-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem var(--space) 2.5rem;
+  max-width: var(--page);
+  margin: 0 auto;
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Lightbox */
+
+.lightbox {
+  width: min(96vw, 72rem);
+  max-width: 96vw;
+  max-height: 96vh;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: #0b0d0f;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.lightbox-inner {
+  position: relative;
+  padding: 3.2rem 1rem 1.25rem;
+}
+
+.lightbox-figure {
+  margin: 0;
+}
+
+.lightbox-figure img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(96vh - 8rem);
+  margin: 0 auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+#lightbox-caption {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.45rem 0.65rem;
+}
+
+.lightbox-nav.prev {
+  left: 0.4rem;
+}
+
+.lightbox-nav.next {
+  right: 0.4rem;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  border-color: var(--accent);
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+  }
+
+  .river-layout {
+    grid-template-columns: 1.6fr 0.9fr;
+    gap: 1.15rem;
+  }
+
+  .hero-title {
+    padding: 2rem 2rem 2.4rem;
+  }
+
+  .section {
+    padding: 4.25rem 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .gallery-item img {
+    filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --muted: #e4ddd2;
+    --line: #c4bdb0;
+  }
+
+}

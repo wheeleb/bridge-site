@@ -1,0 +1,5 @@
+# Originals may contain EXIF/GPS; only optimized images/ are committed.
+raw/
+screenshots/
+.DS_Store
+Thumbs.db
