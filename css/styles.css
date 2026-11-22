@@ -218,6 +218,23 @@ a:hover {
   color: var(--muted);
 }
 
+/* Video */
+
+.raising-video {
+  margin: 0;
+  background: var(--bg-raised);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.raising-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0b0d0f;
+}
+
 .timeline {
   list-style: none;
   margin: 0;
