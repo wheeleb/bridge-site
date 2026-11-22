@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 
 html,
@@ -198,6 +199,66 @@ a:hover {
   max-width: var(--measure);
 }
 
+/* History */
+
+.history-photo {
+  margin: 0 0 1.75rem;
+}
+
+.gallery-item.history-photo img {
+  aspect-ratio: 1376 / 768;
+  object-fit: cover;
+}
+
+.history-copy {
+  max-width: var(--measure);
+}
+
+.history-copy p {
+  color: var(--muted);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15rem;
+  position: relative;
+  margin: 0;
+  padding: 0 0 1.05rem 1.15rem;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.34rem;
+  top: 0.45rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline-when {
+  color: var(--accent);
+  font-family: var(--font-serif);
+}
+
+.timeline-what {
+  min-width: 0;
+}
+
 /* Gallery */
 
 .gallery-grid {
@@ -349,6 +410,12 @@ a:hover {
   border-color: var(--accent);
 }
 
+@media (min-width: 700px) {
+  html {
+    scroll-padding-top: 3.4rem;
+  }
+}
+
 @media (min-width: 640px) {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
@@ -366,6 +433,16 @@ a:hover {
 
   .section {
     padding: 4.25rem 2rem;
+  }
+
+  .timeline li {
+    grid-template-columns: max-content 1fr;
+    column-gap: 1.25rem;
+    align-items: baseline;
+  }
+
+  .timeline-when {
+    white-space: nowrap;
   }
 }
 
