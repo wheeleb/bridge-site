@@ -131,20 +131,11 @@ a:hover {
 
 .gallery-item.then-now-item img {
   width: 100%;
-  height: 58vw;
-  min-height: 15rem;
-  max-height: 26rem;
-  aspect-ratio: auto;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center center;
   background: #1a2228;
-}
-
-.then-now-then img {
-  object-position: center 46%;
-}
-
-.then-now-now img {
-  object-position: center 34%;
 }
 
 .then-now-label {
@@ -489,12 +480,6 @@ a:hover {
 @media (min-width: 800px) {
   .then-now {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .gallery-item.then-now-item img {
-    height: min(62vh, 34rem);
-    max-height: none;
-    min-height: 18rem;
   }
 }
 
